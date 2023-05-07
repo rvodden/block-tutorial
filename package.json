@@ -1,0 +1,24 @@
+{
+	"name": "orchestra-manager",
+	"version": "0.0.1",
+	"description": "This is a wordpress plugin intended to assist in running an orchestra website.",
+	"author": "Richard Vodden",
+	"license": "MIT",
+	"homepage": "http://github.com/rvodden/orchestra-manager",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --webpack-src-dir=js",
+		"format": "wp-scripts format --webpack-src-dir=js",
+		"lint:css": "wp-scripts lint-style --webpack-src-dir=js",
+		"lint:js": "wp-scripts lint-js --webpack-src-dir=js",
+		"packages-update": "wp-scripts packages-update --webpack-src-dir=js",
+		"plugin-zip": "wp-scripts plugin-zip --webpack-src-dir=js",
+		"start": "wp-scripts start --webpack-src-dir=js"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.3.0"
+	},
+	"dependencies": {
+		"@wordpress/components": "^23.9.0"
+	}
+}

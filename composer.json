@@ -1,0 +1,52 @@
+{
+	"support" : {
+		"email" : "richard.vodden@brentso.org.uk"
+	},
+	"require" : {
+		"php" : ">=7.0"
+	},
+	"name" : "rvodden/orchestra-manager",
+	"description" : "Wordpress plugin to manage concerts and similar semi-regular events",
+	"homepage" : "http://www.vodden.com/",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Richard Vodden",
+			"email" : "richard.vodden@brentso.org.uk",
+			"homepage" : "http://www.brentso.org.uk/",
+			"role" : "Creator"
+		}
+	],
+	"keywords" : [
+		"WordPress",
+		"plugins",
+		"music",
+		"concert",
+		"band",
+		"ensemble",
+		"orchestra"
+	],
+	"require-dev" : {
+		"phpunit/phpunit" : "*",
+		"respect/validation" : "*",
+		"php-coveralls/php-coveralls" : "*",
+		"10up/wp_mock" : "*",
+		"wp-coding-standards/wpcs" : "*",
+		"squizlabs/php_codesniffer" : "*",
+		"dealerdirect/phpcodesniffer-composer-installer" : "*",
+		"symfony/error-handler" : "*",
+		"phing/phing" : "*",
+		"roave/security-advisories" : "dev-master"
+	},
+	"autoload" : {
+		"psr-4": {
+			"uk\\org\\brentso\\orchestra_manager\\": "php/"
+		}
+	},
+	"minimum-stability" : "dev",
+	"prefer-stable" : true,
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

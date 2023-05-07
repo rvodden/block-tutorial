@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "orchestra-manager/first-block",
+  "version": "0.0.1",
+  "title": "First Block",
+  "category": "orchestra-manager",
+  "icon": "smiley",
+  "description": "This is a block created with the block tutorial.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "block-tutorial",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "message": {
+      "type": "string",
+      "source": "text",
+      "selector": "div",
+      "default": ""
+    }
+  }
+}
