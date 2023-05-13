@@ -36,13 +36,31 @@ $personPostType = (new PostType())
 	->setAdminMenu($orchestraManagerMenu)
 	->addCustomField((new CustomField())
 			->setName('firstname')
-			->setTitle('First Name')
-	);
+			->setTitle('First Name'))
+	->addCustomField((new CustomField())
+			->setName('secondname')
+			->setTitle('Second Name'));
 
 $roleTaxonomy = (new Taxonomy)
 	->setLabels((new TaxonomyLabels())->setSingularName("Role"))
 	->setAdminMenu($orchestraManagerMenu)
 	->registerPostType($personPostType);
+
+$piecePostType = (new PostType())
+	->setLabels((new PostLabels)->setSingularName('Piece'))
+	->setAdminMenu($orchestraManagerMenu)
+	->addCustomField((new CustomField())
+			->setName('composer')
+			->setTitle('Composer')
+			->setType('integer'));
+
+$concertPostType = (new PostType())
+	->setLabels((new PostLabels)->setSingularName('Concert'))
+	->setAdminMenu($orchestraManagerMenu)
+	->addCustomField((new CustomField())
+			->setName('conductor')
+			->setTitle('Conductor')
+			->setType('integer'));
 
 /* Configure Blocks */
 
@@ -57,23 +75,7 @@ $orchestraManagerBlockCategory = (new BlockCategory)->setTitle("Orchestra Manage
  */
 function orchestraManagerCreateBlock()
 {
-	// register_block_type( __DIR__ . '/build/first-block' );
-	register_block_type(__DIR__ . '/build/second-block');
+	register_block_type( __DIR__ . '/build/first-block' );
+	register_block_type(__DIR__ . '/build/composer');
 }
 add_action('init', 'orchestraManagerCreateBlock');
-
-// function sidebar_plugin_register()
-// {
-// 	wp_register_script(
-// 		'plugin-sidebar-js',
-// 		plugins_url('src/plugin-sidebar.js', __FILE__),
-// 		array('wp-plugins', 'wp-edit-post', 'wp-element')
-// 	);
-// }
-// add_action('init', 'sidebar_plugin_register');
-
-// function sidebar_plugin_script_enqueue()
-// {
-// 	wp_enqueue_script('src/plugin-sidebar-js');
-// }
-// add_action('enqueue_block_editor_assets', 'sidebar_plugin_script_enqueue');

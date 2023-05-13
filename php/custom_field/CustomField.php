@@ -37,7 +37,7 @@ class CustomField implements CustomFieldInterface
 
 	public function create(PostType $postType)
 	{
-		error_log("Creating " . $this->getSlug() . " on " . $postType->getSlug());
+		error_log("Creating " . $this->getSlug() . "(" . $this->type . ") on " . $postType->getSlug());
 		$args = array(
 			'show_in_rest' => true,
 			'single' => true,

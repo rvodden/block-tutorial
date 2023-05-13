@@ -33,7 +33,7 @@ class PostType implements PostTypeInterface
 	protected string $description;
 	protected bool $isPublic = true;
 	protected bool $isHierachical = false;
-	protected array $supports = array("title", "editor", "revisions", "author", "excerpt", "thumbnail");
+	protected array $supports = array("title", "editor", "thumbnail", "excerpt", "custom-fields");
 	protected $menuIcon;
 
 	protected array $customFields;
@@ -66,7 +66,7 @@ class PostType implements PostTypeInterface
 
 	private function defineAdminHooks()
 	{
-		add_action('save_post', [$this, 'saveCustomFields'], 10, 2);
+		// add_action('save_post', [$this, 'saveCustomFields'], 10, 2);
 	}
 
 	public function createPostType()
@@ -95,6 +95,7 @@ class PostType implements PostTypeInterface
 		register_post_type($this->getSlug(), $args);
 
 		foreach (array_diff(self::SUPPORTS, $this->supports) as $support) {
+			error_log("Removing: " . $support);
 			remove_post_type_support($this->getSlug(), $support);
 		}
 

@@ -1,18 +1,17 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "orchestra-manager/second-block",
+	"name": "orchestra-manager/composer",
 	"version": "0.1.0",
-	"title": "Second Block",
+	"title": "Composer",
 	"category": "orchestra-manager",
-	"icon": "groups",
-	"description": "This is a dynamic block which will display some post metadata.",
+	"icon": "users",
+	"description": "This block displays the name of the composer of the currently displayed piece.",
 	"supports": {
-		"html": false,
-		"multiple" : false
+		"html": false
 	},
 	"usesContext": ["postId", "postType"],
-	"textdomain": "second-block",
+	"textdomain": "orchestra-manager",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
